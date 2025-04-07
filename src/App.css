@@ -1,22 +1,16 @@
 :root {
   /* typography */
-  --light: 300;
   --regular: 400;
-  --semibold: 600;
-  --extrabold: 800;
+  --bold: 700;
   /* default colors */
-  --elements: hsl(0, 0%, 100%);
-  --background: hsl(0, 0%, 98%);
-  --text: hsl(200, 15%, 8%);
-  --input: hsl(0, 0%, 52%);
-}
-
-body.dark-theme {
-  /* colors when body element has .dark-theme */
-  --elements: hsl(209, 23%, 22%);
-  --background: hsl(207, 26%, 17%);
-  --text: hsl(0, 0%, 100%);
-  --input: hsl(0, 0%, 100%);
+  --yellow: #fda214;
+  --light-blue: #bcced9;
+  --dark-blue: #304859;
+  --black: #152938;
+  --light-grey: #f2f2f2;
+  --dark-grey: #7191a5;
+  --medium-blue: #6395b8;
+  --white: #fcfcfc;
 }
 
 *,
@@ -28,15 +22,13 @@ body.dark-theme {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Nunito Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: var(--light);
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-weight: var(--bold);
   font-style: normal;
-  font-variation-settings: "wdth" 100, "YTLC" 500;
   font-size: 1em; /* 16px */
   line-height: 1.5;
-  color: var(--text);
-  background-color: var(--background);
+  color: var(--dark-grey);
+  background-color: var(--black);
   height: 100vh;
   margin: 0;
 }
@@ -54,13 +46,13 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: var(--extrabold);
+  font-weight: var(--bold);
   line-height: 1;
   margin: 0;
 }
 
 p {
-  font-weight: var(--light);
+  font-weight: var(--bold);
   margin: 0;
 }
 
