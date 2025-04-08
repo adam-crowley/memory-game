@@ -1,11 +1,10 @@
 import './App.css'
+import StartGame from './components/StartGame'
 
 function App() {
   return (
     <>
-      <div>
-        <h1>Atkinson Hyperlegible</h1>
-      </div>
+      <StartGame />
     </>
   )
 }

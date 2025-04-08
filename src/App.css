@@ -4,6 +4,7 @@
   --bold: 700;
   /* default colors */
   --yellow: #fda214;
+  --light-yellow: #ffb84a;
   --light-blue: #bcced9;
   --dark-blue: #304859;
   --black: #152938;
@@ -26,7 +27,7 @@ body {
   font-weight: var(--bold);
   font-style: normal;
   font-size: 1em; /* 16px */
-  line-height: 1.5;
+  line-height: 1;
   color: var(--dark-grey);
   background-color: var(--black);
   height: 100vh;
@@ -36,8 +37,10 @@ body {
 #root {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   min-height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -62,6 +65,43 @@ ul {
   list-style-type: none;
 }
 
+button {
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: var(--bold);
+  padding: 0;
+  border: 0;
+  width: 100%;
+}
+
+.button--menu {
+  color: var(--white);
+  background-color: var(--light-blue);
+  font-size: 1.625rem;
+  border-radius: 2.188rem;
+  height: 3.25rem;
+}
+.button--menu:hover {
+  background-color: var(--medium-blue);
+}
+.button--menu.selected {
+  background-color: var(--dark-blue);
+}
+
+.button--menu-big {
+  color: var(--white);
+  background-color: var(--yellow);
+  font-size: 2rem;
+  height: 4.375rem;
+  border-radius: 2.188rem;
+}
+.button--menu-big:hover {
+  background-color: var(--light-yellow);
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -74,6 +114,42 @@ ul {
   .container {
     padding: 0 2.5rem;
   }
+}
+
+.start {
+  width: 40.875rem;
+}
+
+.start h1 {
+  font-size: 2.5rem;
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 4.688rem;
+}
+
+.start__panel {
+  background-color: var(--white);
+  padding: 3.625rem;
+  border-radius: 1.25rem;
+}
+
+.start__label {
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.start__container {
+  margin-bottom: 2.25rem;
+}
+
+.start__container--2col {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.start__container--4col {
+  display: flex;
+  gap: 1.25rem;
 }
 
 /*# sourceMappingURL=App.css.map */
