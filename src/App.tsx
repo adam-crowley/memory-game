@@ -1,8 +1,9 @@
 import { useEffect } from 'react'
 import './App.css'
-import StartGame from './components/StartGame'
 
 import { useMemoryStore } from './store/memoryStore'
+// import Settings from './components/Settings'
+import StartGame from './components/StartGame'
 
 function App() {
   const { settings } = useMemoryStore()
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <>
+      {/* <Settings /> */}
       <StartGame />
     </>
   )
