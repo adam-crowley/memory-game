@@ -1,6 +1,9 @@
 import { useEffect } from 'react'
+import { useMemoryStore } from '../store/memoryStore'
 
 function StartGame() {
+  const { setGameActive } = useMemoryStore()
+
   useEffect(() => {
     document.body.style.backgroundColor = '#fcfcfc'
   }, [])
@@ -11,7 +14,12 @@ function StartGame() {
         <header className="start__header">
           <h1>memory</h1>
           <button className="button button--primary">Restart</button>
-          <button className="button button--secondary">New Game</button>
+          <button
+            onClick={() => setGameActive()}
+            className="button button--secondary"
+          >
+            New Game
+          </button>
         </header>
         <main className="start__main">
           <div className="start__board start__board--grid-6">

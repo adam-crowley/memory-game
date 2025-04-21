@@ -1,7 +1,7 @@
 import { useMemoryStore } from '../store/memoryStore'
 
 function Settings() {
-  const { settings, setSettings } = useMemoryStore()
+  const { settings, setSettings, setGameActive } = useMemoryStore()
 
   return (
     <>
@@ -81,7 +81,12 @@ function Settings() {
               6&#215;6
             </button>
           </div>
-          <button className="button button--menu-big">Start Game</button>
+          <button
+            onClick={() => setGameActive()}
+            className="button button--menu-big"
+          >
+            Start Game
+          </button>
         </div>
       </div>
     </>
