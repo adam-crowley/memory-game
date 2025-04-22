@@ -6,7 +6,7 @@ import Settings from './components/Settings'
 import StartGame from './components/StartGame'
 
 function App() {
-  const { settings, gameActive } = useMemoryStore()
+  const { settings, gameActive, board } = useMemoryStore()
 
   useEffect(() => {
     console.log('settings: ', settings)
@@ -15,6 +15,10 @@ function App() {
   useEffect(() => {
     console.log('gameActive: ', gameActive)
   }, [gameActive])
+
+  useEffect(() => {
+    console.log('board: ', board)
+  }, [board])
 
   return <>{gameActive ? <StartGame /> : <Settings />}</>
 }

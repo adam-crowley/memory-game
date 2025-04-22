@@ -1,7 +1,20 @@
 import { useMemoryStore } from '../store/memoryStore'
+import shuffle from '../utilities/shuffle.ts'
 
 function Settings() {
-  const { settings, setSettings, setGameActive } = useMemoryStore()
+  const { settings, setSettings, setGameActive, setBoard } = useMemoryStore()
+
+  const handleClick = () => {
+    const noOfPieces = settings.gridSize * settings.gridSize
+    if (settings.theme === 'numbers') {
+      const pieces = []
+      for (let i = 1; i <= noOfPieces / 2; i++) {
+        pieces.push(i, i)
+      }
+      setBoard(shuffle(pieces))
+    }
+    setGameActive()
+  }
 
   return (
     <>
@@ -82,7 +95,7 @@ function Settings() {
             </button>
           </div>
           <button
-            onClick={() => setGameActive()}
+            onClick={() => handleClick()}
             className="button button--menu-big"
           >
             Start Game

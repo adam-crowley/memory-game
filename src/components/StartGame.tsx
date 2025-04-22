@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useMemoryStore } from '../store/memoryStore'
 
 function StartGame() {
-  const { setGameActive } = useMemoryStore()
+  const { settings, setGameActive, board } = useMemoryStore()
 
   useEffect(() => {
     document.body.style.backgroundColor = '#fcfcfc'
@@ -22,43 +22,12 @@ function StartGame() {
           </button>
         </header>
         <main className="start__main">
-          <div className="start__board start__board--grid-6">
-            <button className="start__button">16</button>
-            <button className="start__button selected"></button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
-            <button className="start__button complete">16</button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
-            <button className="start__button">16</button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
-            <button className="start__button">16</button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
-            <button className="start__button">16</button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
-            <button className="start__button">16</button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
-            <button className="start__button"></button>
+          <div
+            className={`start__board start__board--grid-${settings.gridSize}`}
+          >
+            {board.map((boardItem) => (
+              <button className="start__button">{boardItem}</button>
+            ))}
           </div>
         </main>
         <footer className="start__footer start__footer--single-player">
