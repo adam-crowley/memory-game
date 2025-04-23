@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useMemoryStore } from '../store/memoryStore'
 import shuffle from '../utilities/shuffle.ts'
 
@@ -15,6 +16,10 @@ function Settings() {
     }
     setGameActive()
   }
+
+  useEffect(() => {
+    document.body.style.backgroundColor = '#152938'
+  }, [])
 
   return (
     <>

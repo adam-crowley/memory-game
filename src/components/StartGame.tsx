@@ -2,7 +2,11 @@ import { useEffect } from 'react'
 import { useMemoryStore } from '../store/memoryStore'
 
 function StartGame() {
-  const { settings, setGameActive, board } = useMemoryStore()
+  const { settings, setGameActive, board, updateBoardItem } = useMemoryStore()
+
+  const clickHandler = (boardItem: number, index: number) => {
+    updateBoardItem(index, { isSelected: true })
+  }
 
   useEffect(() => {
     document.body.style.backgroundColor = '#fcfcfc'
@@ -25,8 +29,16 @@ function StartGame() {
           <div
             className={`start__board start__board--grid-${settings.gridSize}`}
           >
-            {board.map((boardItem) => (
-              <button className="start__button">{boardItem}</button>
+            {board.map((boardItem, index) => (
+              <button
+                onClick={() => clickHandler(boardItem.number, index)}
+                key={index}
+                className={`start__button ${
+                  boardItem.isSelected ? 'selected' : ''
+                }`}
+              >
+                <span>{boardItem.number}</span>
+              </button>
             ))}
           </div>
         </main>

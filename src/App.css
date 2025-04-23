@@ -241,13 +241,20 @@ ul {
   color: var(--white);
   background-color: var(--dark-blue);
 }
+.start__button span {
+  display: none;
+}
 .start__button:hover {
   background-color: var(--medium-blue);
 }
 .start__button.selected {
   background-color: var(--yellow);
 }
+.start__button.selected span {
+  display: block;
+}
 .start__button.complete {
+  cursor: none;
   background-color: var(--light-blue);
 }
 

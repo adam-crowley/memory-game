@@ -214,13 +214,20 @@ ul {
   font-weight: var(--bold);
   color: var(--white);
   background-color: var(--dark-blue);
+  span {
+    display: none;
+  }
   &:hover {
     background-color: var(--medium-blue);
   }
   &.selected {
     background-color: var(--yellow);
+    span {
+      display: block;
+    }
   }
   &.complete {
+    cursor: none;
     background-color: var(--light-blue);
   }
 }
