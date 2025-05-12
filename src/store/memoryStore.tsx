@@ -19,7 +19,7 @@ interface MemoryStore {
   setSettings: (setting: string, value: string | number) => void
   setGameActive: () => void
   setBoard: (pieces: number[]) => void
-  // updateBoardItem: (index: number, updates)
+  updateBoardItem: (index: number, updates: Partial<BoardItem>) => void
 }
 
 export const useMemoryStore = create<MemoryStore>((set) => ({

@@ -1,11 +1,30 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useMemoryStore } from '../store/memoryStore'
 
 function StartGame() {
   const { settings, setGameActive, board, updateBoardItem } = useMemoryStore()
+  // const [pair, setPair] = useState<number[]>([])
+  const [counter, setCounter] = useState<number>(1)
+
+  // useEffect(() => {
+  //   if (pair.length === 2) {
+  //     if (pair[0] === pair[1]) {
+  //       updateBoardItem(board[], { isComplete: true })
+  //       updateBoardItem(pair[1], { isComplete: true })
+  //     }
+  //   }
+  // }, [pair])
 
   const clickHandler = (boardItem: number, index: number) => {
+    // if (pair.length === 2) {
+    //   return
+    // }
+    setCounter((prev) => (prev < 2 ? 2 : 1))
     updateBoardItem(index, { isSelected: true })
+    // setPair((prev) => [...prev, boardItem])
+
+    // console.log('pair', pair)
+    console.log('counter', counter)
   }
 
   useEffect(() => {
@@ -35,7 +54,7 @@ function StartGame() {
                 key={index}
                 className={`start__button ${
                   boardItem.isSelected ? 'selected' : ''
-                }`}
+                } ${boardItem.isComplete ? 'complete' : ''}`}
               >
                 <span>{boardItem.number}</span>
               </button>
